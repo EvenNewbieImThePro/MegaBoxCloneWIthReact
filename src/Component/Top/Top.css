@@ -1,0 +1,40 @@
+top {
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    position: fixed;
+    min-width: 320px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #000033;
+}
+
+top img {
+    line-height: 40px;
+    width: auto;
+    height: 40px;
+    margin: auto;
+    vertical-align: middle;
+}
+
+top span {
+    color: white;
+    font-size: 25px;
+}
+
+.top-membership {
+    float: left;
+    margin-left: 15px;
+    margin-right: 48.75px;
+}
+
+.top-user {
+    float: right;
+    margin-right: 15px;
+}
+
+.top-user svg{
+    margin-left: 15px;
+}
