@@ -6,20 +6,28 @@ import { faBarcode, faBell, faBars
 import './Top.css';
 
 class Top extends Component {
- render() {
-   return(
-     <top>
-       <span className="top-membership" >
-         <FontAwesomeIcon icon={faBarcode}></FontAwesomeIcon>
+  render() {
+    return(
+      <div className="banner">
+        <span className="top-membership">
+          <FontAwesomeIcon icon={faBarcode}></FontAwesomeIcon>
         </span>
-      
-      <img src={banner} alt={'메가박스 메인으로'}/>
-      
-      <span className="top-user">
-        <FontAwesomeIcon icon={faBell}></FontAwesomeIcon>
-        <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
-      </span>
-     </top>
+       
+        <img src={banner} alt={'메가박스 메인으로'}/>
+       
+        <span className="top-user">
+          <FontAwesomeIcon icon={faBell}></FontAwesomeIcon>
+          <FontAwesomeIcon 
+            icon={faBars}
+            onClick={function() {
+              var rightSideBar = document.getElementsByClassName('right-side-bar')[0];
+              var overLay = document.getElementsByClassName('overLay')[0];
+              rightSideBar.style.width='calc(320px)';
+              overLay.style.display="block";
+            }}
+          ></FontAwesomeIcon>
+       </span>
+      </div>
    );
  }
 }

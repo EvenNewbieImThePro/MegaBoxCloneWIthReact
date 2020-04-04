@@ -1,0 +1,20 @@
+.bottom {
+    bottom: 0px;
+    display: grid;
+    color: gray;
+    position: fixed;
+    padding-top: 7px;
+    padding-bottom: 3px;
+    text-align: center;
+    grid-template-columns: repeat(5, 20vw);
+    background-color: rgb(49, 49, 50,0.9);
+    line-height: 15px
+}
+
+.bottom svg {
+    font-size: 18px;
+}
+
+.bottom span {
+    font-size: 12px;
+}

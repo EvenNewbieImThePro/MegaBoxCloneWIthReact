@@ -1,4 +1,4 @@
-top {
+.banner {
     top: 0;
     z-index: 5;
     width: 100%;
@@ -6,12 +6,12 @@ top {
     margin: auto;
     position: fixed;
     min-width: 320px;
-    line-height: 50px;
+    line-height: 46px;
     text-align: center;
     background-color: #000033;
 }
 
-top img {
+.banner img {
     line-height: 40px;
     width: auto;
     height: 40px;
@@ -19,7 +19,7 @@ top img {
     vertical-align: middle;
 }
 
-top span {
+.banner span {
     color: white;
     font-size: 25px;
 }
