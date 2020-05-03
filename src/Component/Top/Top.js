@@ -1,8 +1,8 @@
 import React, { Component} from 'react';
 import banner from '../../images/bannerInvertColor.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBarcode, faBell, faBars
- } from '@fortawesome/free-solid-svg-icons';
+import { faBarcode, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBell } from '@fortawesome/free-regular-svg-icons';
 import './Top.css';
 
 class Top extends Component {
@@ -13,7 +13,7 @@ class Top extends Component {
           <FontAwesomeIcon icon={faBarcode}></FontAwesomeIcon>
         </span>
        
-        <img src={banner} alt={'메가박스 메인으로'}/>
+        <a href="/"><img src={banner} title='메가박스 메인으로' alt='메가박스 메인으로'/></a>
        
         <span className="top-user">
           <FontAwesomeIcon icon={faBell}></FontAwesomeIcon>

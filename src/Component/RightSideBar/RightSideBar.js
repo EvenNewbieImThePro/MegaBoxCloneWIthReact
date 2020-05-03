@@ -1,12 +1,12 @@
 import React, { Component} from 'react';
+import { Route, Link, Switch, BrowserRouter as Router } from 'react-router-dom';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faTimes, faUserPlus, faBell, faTicketAlt, faCogs,
   faTape, faTv, faUser, faFilm, faShoppingBag, faGift, faBullhorn,
   faChevronDown,
  } from '@fortawesome/free-solid-svg-icons';
 import './RightSideBar.css';
-
-
 
 class Top extends Component {
   render() {
@@ -37,26 +37,30 @@ class Mid extends Component {
     super(props);
     this.state = {
       menu: [
-        {key:1, icon: faTape, desc:"영화별 예매" },
-        {key:2, icon: faTv, desc:"극장별 예매" },
-        {key:3, icon: faUser, desc:"나의 메가박스" },
-        {key:4, icon: faFilm, desc:"영화" },
-        {key:5, icon: faShoppingBag, desc:"스토어" },
-        {key:6, icon: faGift, desc:"이벤트" },
+        {icon: faTape, desc:"영화별 예매", route:"/book_by_movie" },
+        {icon: faTv, desc:"극장별 예매", route:"/book_by_theater" },
+        {icon: faUser, desc:"나의 메가박스", route:"/my" },
+        {icon: faFilm, desc:"영화", route:"/movie" },
+        {icon: faShoppingBag, desc:"스토어", route:"/store" },
+        {icon: faGift, desc:"이벤트", route:"/event" },
       ]
     }
   }
   render() {
     return(
       <div className="sidebar-mid">
-        {this.state.menu.map((data)=> {
-          return(
-            <div key={data.key}>
-              <div className="sidebar-mid-icon"><FontAwesomeIcon icon={data.icon}/></div>
-              {data.desc}
-            </div>
-          );
-        })}
+        <Router>
+          {this.state.menu.map((data, index)=> {
+            return(
+              <Link to={data.route} key={index} className="sidebar-router">
+                <div className="sidebar-mid-icon">
+                  <FontAwesomeIcon icon={data.icon}/>
+                </div>
+                {data.desc}
+              </Link>
+            );
+          })}
+        </Router>
       </div>
     );
   }
@@ -113,13 +117,11 @@ class Bottom extends Component {
             );
           }
           else return(
-           
-              <div className="sidebar-bottom-list" key={data.key}>
-                <div className="sidebar-bottom-list-desc">
-                  {data.desc}
-                </div>
+            <div className="sidebar-bottom-list" key={data.key}>
+              <div className="sidebar-bottom-list-desc">
+                {data.desc}
               </div>
-           
+            </div>
           );
         })}
         <div className="sidebar-bottom-notice">
@@ -143,9 +145,14 @@ class RightSideBar extends Component {
         ID
       </span>);
     var unLogined1 = (
-      <span className="sidebar-top-userinfo"> 
-        <u><b>로그인</b></u> 후 이용하세요!
-      </span>);
+      <span className="sidebar-top-userinfo">
+        <Router>
+          <Link to="/login" style={{textDecoration:'none'}}>
+            <u><b>로그인</b></u> 후 이용하세요!
+          </Link>
+        </Router> 
+      </span>
+    );
 
     
     var unLogined2 = (
@@ -162,7 +169,7 @@ class RightSideBar extends Component {
     var logined2 = (
       <div className="sidebar-top-bottom2">
         <span style={{float:'left'}}>
-          <FontAwesomeIcon icon={faUserPlus}/> 알림함
+          <FontAwesomeIcon icon={faBell}/> 알림함
         </span>
         <span>
           <FontAwesomeIcon icon={faTicketAlt}/> 예매확인/취소

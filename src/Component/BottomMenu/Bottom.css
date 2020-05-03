@@ -8,13 +8,26 @@
     text-align: center;
     grid-template-columns: repeat(5, 20vw);
     background-color: rgb(49, 49, 50,0.9);
-    line-height: 15px
+    line-height: 15px;
+    font-size: 13px;
+    cursor: default;
+    z-index: 10;
 }
 
+.active{
+    color: #1fcfcf;
+}
 .bottom svg {
     font-size: 18px;
+    margin-bottom: 1px;
 }
 
 .bottom span {
     font-size: 12px;
+}
+
+.bottom-router {
+    color: grey;
+    text-decoration: none;
+    cursor: default;
 }
