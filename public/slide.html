@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Slide</title>
+  <style>
+    *{margin:0;padding:0;}
+    ul,li{list-style:none;}
+    .slide{height:150px;overflow:hidden;}
+    .slide ul{height:100%;}
+    .slide li{height:100%;}
+    .slide li:nth-child(1){background:#faa;}
+    .slide li:nth-child(2){background:#afa;}
+    .slide li:nth-child(3){background:#aaf;}
+    .slide li:nth-child(4){background:#faf;}
+  </style>
+  <script>
+    
+    const all = ele => document.querySelectorAll(ele);
+    const one = ele => document.querySelector(ele)
+    const slide = _ => {
+        const wrap = one('.slide'); // .slide 선택
+        const target = wrap.children[0];
+        const len = target.children.length;
+
+        target.style.cssText = `width:calc(100% * ${len});display: flex;transition: 1s`;
+        Array.from(target.children)
+        .forEach(ele => ele.style.cssText = `width:calc(100% / ${len});`);
+
+        let pos = 0;
+        setInterval(() => {
+            pos = (pos + 1) % len;
+            target.style.marginLeft = `${-pos * 100}` // 장면 전환
+        }, 1500) // 1.5초마다 실행
+    }
+    window.onload = function() { slide() }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</body>

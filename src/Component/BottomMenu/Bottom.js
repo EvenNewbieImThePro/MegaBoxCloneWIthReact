@@ -1,8 +1,7 @@
-import React, { Component} from 'react';
-import banner from '../../images/bannerInvertColor.png'
+import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTape, faShoppingBag, faTicketAlt, faGift, faUser
- } from '@fortawesome/free-solid-svg-icons';
+import { Link, BrowserRouter } from 'react-router-dom'
+import { faTape, faShoppingBag, faTicketAlt, faGift, faUser } from '@fortawesome/free-solid-svg-icons';
 import './Bottom.css';
 
 class Bottom extends Component {
@@ -10,28 +9,33 @@ class Bottom extends Component {
     super(props);
     this.state = {
       list: [
-        {key:1, icon: faTape, desc:"영화"},
-        {key:2, icon: faShoppingBag, desc:"스토어"},
-        {key:3, icon: faTicketAlt, desc:"예매"},
-        {key:4, icon: faGift, desc:"이벤트"},
-        {key:5, icon: faUser, desc:"MY"},
-      ]
+        { icon: faTape, desc: "영화", route: "/" },
+        { icon: faShoppingBag, desc: "스토어", route: "/store" },
+        { icon: faTicketAlt, desc: "예매", route: "/ticketing" },
+        { icon: faGift, desc: "이벤트", route: "/event" },
+        { icon: faUser, desc: "MY", route: "/my" },
+      ],
     }
   }
   render() {
     return(
       <div className="bottom">
-        {this.state.list.map((data) => {
+        {this.state.list.map((data, index) => {
           return(
-            <div key={data.key}>
-              <FontAwesomeIcon icon={data.icon}/><br/>
-              <span>{data.desc}</span>
-            </div>
+            <Link to={data.route} key={index} className="bottom-router">
+              <div className={data.cname} onClick={function(e) {
+                this.props.onChangeView(data.desc);
+                }.bind(this)}
+              >
+                <FontAwesomeIcon icon={data.icon}/><br/>
+                {data.desc}
+              </div>
+            </Link>
           );
         })}
       </div>
     );
- }
+  }
 }
 
 export default Bottom;

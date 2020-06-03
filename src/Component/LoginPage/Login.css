@@ -1,0 +1,51 @@
+.login-wrapper {
+    background-color: white;
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+}
+
+.login-wrapper h4 {
+    margin: 10px 15px 15px 15px;
+    text-align: center;
+}
+
+.login-wrapper-close-icon {
+    float: right;
+}
+
+.login-wrapper-input-form {
+    padding: 15px;
+}
+
+.login-wrapper-input-form form input {
+    width: 100%;
+    padding: 5px 0px 5px 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+    border-bottom: 1px solid #d6d6d6;
+
+}
+
+.login-wrapper-input-form form button {
+    width: 100%;
+    color: white;
+    background: #6437bf;
+    border: none;
+    height: 35px;
+    font-size: 10px;
+    margin-top: 20px;
+}
+
+.auto-login {
+    width: 12.67px !important;
+    margin-left: 0px !important;
+    vertical-align: middle;
+}
+
+.user-function {
+    text-align: center;
+    font-size: 10px;
+}
