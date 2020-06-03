@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Swiper from 'react-id-swiper';
 import { faAngleRight, faFilm, faTicketAlt } from '@fortawesome/free-solid-svg-icons';
@@ -76,7 +76,7 @@ class MovieListSwiper extends Component {
         prevEl: '.swiper-button-prev.customized-swiper-button-prev' // Add your class name for prev button
       },
       containerClass: 'customized-swiper-container', // Replace swiper-container with customized-swiper-container
-      direction: 'horizontal',
+
     }
     return(
       <Swiper {...params}>
