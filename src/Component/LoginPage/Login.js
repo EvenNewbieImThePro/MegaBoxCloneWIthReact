@@ -1,8 +1,7 @@
 import React, { Component} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
-import { Route, Link, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import './Login.css';
 
 class LoginPage extends Component {

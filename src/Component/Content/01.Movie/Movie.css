@@ -11,14 +11,18 @@
     
 }
 
-#movie-slide-wrapper {
+#movie-container {
     padding-left: 15px;
     padding-right: 15px;
+    width: calc(1fr - 30px);
+    overflow: auto;
+}
+.movie-slide-wrapper {
     display: grid;
     grid-template-columns: repeat(10, 200px);
     grid-template-rows: auto;
     grid-column-gap: 15px;
-    overflow: scroll;
+    
 }
 .movie-slide {
     color: white;
@@ -175,23 +179,27 @@
 .news img {
     height: auto;
     border-radius: 5px;
-    width: calc(100%);
+    width: 100%;
 }
 
-
+.special-theater-container > h2 {
+    font-size: 22px;
+    color: white;
+    padding-left: 15px;
+}
 @media(min-width: 575px) {
     .news > div {
         display: grid;
         padding: 15px;
-        grid-column-gap: 10px;
+        grid-column-gap: 15px;
         grid-template-rows: auto;
-        grid-template-columns: calc(50vw - 25px) calc(50vw - 25px);
+        grid-template-columns: calc(50vw - 30px) calc(50vw - 30px);
        
     }
     .news img {
         height: auto;
         border-radius: 5px;
-        width: calc(50vw - 25px);
+        width: 100%;
     }
 }
 

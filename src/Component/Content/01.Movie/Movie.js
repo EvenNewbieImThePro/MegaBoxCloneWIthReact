@@ -67,37 +67,31 @@ class MovieListSwiper extends Component {
     
   }
   render() {
-    const params = {
-      pagination: {
-        el: '.swiper-pagination.customized-swiper-pagination',
-      }, // Add your class name for pagination container
-      navigation: {
-        nextEl: '.swiper-button-next.customized-swiper-button-next', // Add your class name for next button
-        prevEl: '.swiper-button-prev.customized-swiper-button-prev' // Add your class name for prev button
-      },
-      containerClass: 'customized-swiper-container', // Replace swiper-container with customized-swiper-container
-
-    }
+    //  
     return(
-      <Swiper {...params}>
-        {this.state.movie.map((data, index) => {
-          return(
-            <div className="movie-slide" key={index}>
-              <img src={data.poster} alt={data.movieTitle}/>
-              <div className="movie-info">
-                <div id={data.degreeIcon}>{data.degreeText}</div> <span>{data.movieTitle}</span>
-                <div className="movie-data">
-                  <div className="movie-data-info">예매율</div>
-                  <div className="movie-data-info">관람평</div>
-                  <div className="movie-data-info">보고싶어</div>
-                  <div>{data.bookRatio}% </div><div>{data.point}</div><div>{data.likes}</div>
-                </div>
-                <button className="movie-book-button">바로예매</button>
-              </div>         
-            </div>
-          );
-        })}
-      </Swiper>
+      // <Swiper {...params}>
+      <div id="movie-container">
+        <div className="movie-slide-wrapper">
+          {this.state.movie.map((data, index) => {
+            return(
+              <div className="movie-slide" key={index}>
+                <img src={data.poster} alt={data.movieTitle}/>
+                <div className="movie-info">
+                  <div id={data.degreeIcon}>{data.degreeText}</div> <span>{data.movieTitle}</span>
+                    <div className="movie-data">
+                      <div className="movie-data-info">예매율</div>
+                      <div className="movie-data-info">관람평</div>
+                      <div className="movie-data-info">보고싶어</div>
+                      <div>{data.bookRatio}% </div><div>{data.point}</div><div>{data.likes}</div>
+                    </div>
+                  <button className="movie-book-button">바로예매</button>
+                </div>         
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      // </Swiper>
     );
   }
 }
@@ -178,9 +172,7 @@ class MegaboxNews extends Component {
           <div><img src={event1} alt="event"/></div>
           <div><img src={event2} alt="event"/></div>
         </div>
-        <div>
-          
-        </div>
+        <hr style={{border: '1px solid rgb(41,41,41)', margin: 15}}/>
       </div>
     );
   }
@@ -220,12 +212,16 @@ class SpecialTheater extends Component {
   };
   render() {
     return(
-      <div>
-  
+      <div class="special-theater-container">
+        <h2>영화 이벤트</h2>
+        <div>
+          
+        </div>
       </div>
     );
   }
 }
+
 class MoviePost extends Component {
   constructor(props) {
     super(props);
@@ -274,7 +270,7 @@ class MovieTap extends Component {
         </div>
         <div className="movie-slide-wrapper-bottom">
           {/* <Swiper></Swiper> */}
-          <hr style={{border: '1px solid rgb(41,41,41)', margin: 15}}></hr>
+          <hr style={{border: '1px solid rgb(41,41,41)', margin: 15}}/>
         </div>
         
         

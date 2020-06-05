@@ -146,11 +146,9 @@ class RightSideBar extends Component {
       </span>);
     var unLogined1 = (
       <span className="sidebar-top-userinfo">
-        <Router>
-          <Link to="/login" style={{textDecoration:'none'}}>
-            <u><b>로그인</b></u> 후 이용하세요!
-          </Link>
-        </Router> 
+        <a href="/login" style={{textDecoration:'none'}}>
+          <u><b>로그인</b></u> 후 이용하세요!
+        </a>
       </span>
     );
 
